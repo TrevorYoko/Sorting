@@ -114,6 +114,12 @@ public class Sort_Utils
 	 *             
 	 * Note: the timeout_threshold_seconds probably won't come into consideration until you start timing really big array sets 
 	 */
+	
+	
+	/*
+	 * Name						time to do sort			time to reverse		time for random array(divides it by the complexity of the , gives you the constant)
+	 * Amount of elements
+	 */
 	public void test_and_time(		Sorter<Integer> sort_routine, 
 	                          		int start_count, 
 	                          		int count_increment, 

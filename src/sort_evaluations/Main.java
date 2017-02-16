@@ -26,6 +26,21 @@ public class Main
 	{
 		ArrayList<Sorter<Integer>> sort_methods = new ArrayList<>();
 
+
+		//sort_methods.add(new Insertion_Sort<Integer>());
+		//sort_methods.add(new Java_Sort<Integer>());
+		//sort_methods.add(new Merge_Sort<Integer>());
+		//sort_methods.add(new Quick_Sort_Inplace_First_Pivot<Integer>());
+		//sort_methods.add(new Quick_Sort_Inplace_M3<Integer>());
+		//sort_methods.add(new Quick_Sort_Inplace_Random_Pivot<Integer>());
+		//sort_methods.add(new Quick_Sort_Naive<Integer>());
+		sort_methods.add(new Shell_Sort<Integer>());
+		
+		for(Sorter<Integer> sorter : sort_methods) {
+			new Sort_Utils().test_and_time(sorter, 1, 200000, 5_000_000, 600);
+		}
+		
+		//Sort_Utils.test_and_time(sort_methods, 500, 1000, 500000, 500);
 		// ...
 		
 	}
