@@ -1,0 +1,45 @@
+Trevor Yokoyama
+u1072484
+2/16/17
+CS 2420
+Assignment 5
+Ryan Daly
+The following text:
+I pledge that the work done here was my own and that I have learned how to write this program, such that I could throw it out and restart and finish it in a timely manner. I am not turning in any work that I cannot understand, describe, or recreate. I further acknowledge that I contributed substantially to all code handed in and vouch for it's authenticity. (Name)
+
+Trevor Yokoyama	      
+
+Description
+This project revolved around learning and testing different types of sorting algorithms as well as learning about Big 0 efficiency. 
+In writing and looking at the different complexity classes of the algorithms, we were able to see the pros and cons of the different sorters. 
+For example, quick_sort can be one of the best sorters in terms of complexity, yet it can also be the worst. 
+This shows how consistency of an algorithm is very important when planning large projects. Furthermore, through testing the different sorters, we were able to 
+visually tell the difference between some of them as well as see the complexity (N^2 vs log(N)).
+	      
+Note to TAs
+We implemented everything that was asked of us.
+Nothing fancy.	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      I pledge that the work done here was my own and that I have learned how to write
+	      this program (such that I could throw it out and restart and finish it in a timely
+	      manner).  I am not turning in any work that I cannot understand, describe, or
+	      recreate.  Any sources (e.g., web sites) other than the lecture that I used to
+	      help write the code are cited in my work.  When working with a partner, I have
+	      contributed an equal share and understand all the submitted work.  Further, I have
+	      helped write all the code assigned as pair-programming and reviewed all code that
+	      was written separately.
+	                      Trevor Yokoyama
+	  
+Design Decisions
+Alot of the decisions that went into the design of the project were so that we could try to accomplish all of the needed methods.
+We left the quick sort abstract class and just changed the methods in the differnt sub-classes for easy understanding.
+Other than that we tried to do everything as best we could and as close to the given directions
+
+Problems
+The only problems we had were simple syntax issues, no big logic errors, which is why it took us so long to fix it.
+All it too to fix was a close read through and us to stop being dumb.

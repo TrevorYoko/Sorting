@@ -1,14 +1,17 @@
 package sort_evaluations;
 
 import java.util.ArrayList;
-
 /**
- * @author H. James de St. Germain
- * @date Spring 2007
+ * This code calls and gives information on Shell Sort
  * 
- *       Code inspired by Mark Allen Weiss' code
+ * Pseudo Code
+ * 1)Start with the largest gap
+ * 2)Perform an insertion sort with a gap
+ * 3)Keep adding elements until there is a gap sorted array
+ * 4)Shift the elements until they are sorted and no longer gap sorted
  * 
- *       this is an implementation of the Shell Sort Routine
+ * @author Trevor Yokoyama, Ryan Daly
+ * @date   Feb. 2nd 2017
  *
  */
 public class Shell_Sort<Type extends Comparable<? super Type>> implements Sorter<Type>
@@ -86,7 +89,7 @@ public class Shell_Sort<Type extends Comparable<? super Type>> implements Sorter
 	@Override
 	public Complexity_Class get_expected_complexity_class()
 	{
-		return Complexity_Class.Nsquared;
+		return Complexity_Class.NlogN;
 	}
 
 }

@@ -3,13 +3,12 @@ package sort_evaluations;
 import java.util.ArrayList;
 
 /**
- * @author H. James de St. Germain
- * @date   Spring 2007
  * 
- * This interface allows a sort routine to be tested by turning the
- * sort into a "functor".  All the sorts of interest must
- * be created to follow the functions required by this interface. 
- *
+ * Methods for generating test data, testing sortedness, timing, etc.
+ * 
+ * 
+ * @author Trevor Yokoyama, Ryan Daly
+ * @date   Feb. 2nd 2017
  */
 public interface Sorter<Type extends Comparable<? super Type>>
 {
@@ -46,7 +45,6 @@ public interface Sorter<Type extends Comparable<? super Type>>
 
 
   /**
-   * FIXME: write a Swap Routine that will swap the given two values in the array
    * In in of your code where you swap things, use this swap method. 
    */
   public static <Type> void swap(ArrayList<Type> array, int from, int to)

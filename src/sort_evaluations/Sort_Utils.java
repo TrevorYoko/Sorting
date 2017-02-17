@@ -10,13 +10,13 @@ import java.util.Random;
  * Methods for generating test data, testing sortedness, timing, etc.
  * 
  * 
- * 
+ * @author Trevor Yokoyama, Ryan Daly
+ * @date   Feb. 2nd 2017
  */
 public class Sort_Utils
 {
 	private long startTime;
 	private long endTime;
-	// FIXME: create two fields to store start time and end time values
 
 	/**
 	 * test to make sure the array is sorted from smallest to largest
@@ -139,10 +139,10 @@ public class Sort_Utils
 		double time_random = -1;
 		double time_all_same = -1;
 
-		boolean do_sorted = false;
-		boolean do_reverse = false;
+		boolean do_sorted = true;
+		boolean do_reverse = true;
 		boolean do_random = true;
-		boolean do_same = false;
+		boolean do_same = true;
 
 		for (int count = start_count; count <= max_count; count += count_increment)
 		{
@@ -332,7 +332,7 @@ public class Sort_Utils
 
 			double time_worst = Math.max(time_random,
 					Math.max(time_sorted, Math.max(time_reverse_sorted, time_all_same)));
-
+			
 			if (sort_routine.get_expected_complexity_class()==Complexity_Class.NlogN)
 			{
 				double time_random_divided_by_N_log_N = time_random/(count*Math.log(count));
@@ -465,7 +465,7 @@ public class Sort_Utils
 	 */
 	private void timer_on()
 	{
-		startTime=System.currentTimeMillis();
+		startTime=System.nanoTime();
 	}
 
 	/**
@@ -473,7 +473,7 @@ public class Sort_Utils
 	 */
 	private void timer_off()
 	{
-		endTime=System.currentTimeMillis();
+		endTime=System.nanoTime();
 	}
 
 	/**
@@ -482,7 +482,7 @@ public class Sort_Utils
 	private double get_time()
 	{
 		double time= endTime-startTime;
-		time*=1000;
+		time/=1000000000;
 		return time;
 	}
 

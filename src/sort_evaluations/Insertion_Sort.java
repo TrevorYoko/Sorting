@@ -4,15 +4,24 @@ import java.net.Proxy.Type;
 import java.util.ArrayList;
 
 /**
- *        FIXME: every file should have your name (and your partner's name) on it, as well as the date, 
- *        a useful description, etc.
+ * This code calls and gives information on Insertion sort
+ * 
+ * Pseudo Code
+ * 1) Checks to see if the list is bigger than 1 element
+ * 2)Iterates through the loop
+ * 3)while going through the loop, Iterate through the loop
+ * 4)if one element ,that is to the right of another element, is smaller than switch the elements
+ * 
+ * @author Trevor Yokoyama, Ryan Daly
+ * @date   Feb. 2nd 2017
+ *
  */
 
 public class Insertion_Sort<Type extends Comparable<? super Type>> implements Sorter<Type> // make generic and implement Sorter 
 {
 
 	/**
-	 * FIXME: Return the Name of the sort
+	 * Returns the name of the sort
 	 */
 	public String name_of_sort(){
 		return "Insertion Sort";
@@ -20,23 +29,19 @@ public class Insertion_Sort<Type extends Comparable<? super Type>> implements So
 
 	/**
 	 * No affect on insertion sort
-	 * FIXME: Simply print a debug message saying this is ignored
 	 */
 	public void set_constant( double constant ){
 		System.out.println("This is ignored");
 	}
 
 	/**
-	 * Note: the actual insertion sort code should be written in the Sort_Utils package
-	 * call that code in this method
-	 * FIXME: sort the entire array using insertion sort
+	 * Calls Insertion sort on the Given array from the Sort_Utils.Java file
 	 */
 	public void sort( ArrayList<Type> array ){
 		Sort_Utils.insertion_sort(array, 0, array.size());
 	}
 
 	/**
-	 * FIXME: return what you believe the Big O of insertion sort should be
 	 * @return the expected complexity of this algorithm
 	 */
 	@Override

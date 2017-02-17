@@ -6,12 +6,17 @@ import java.util.ArrayList;
 /**
  * This code is an abstract base class for all versions of quicksort.
  * 
+ * Pseudo Code
+ * 1)Grab a pivot
+ * 2)Cut Array in half, one half is elements less than pivot and the otehr is elements more than pivot
+ * 3)Sort the lists into smaller lists
+ * 4)Combine the lists
  * 
- *  Write Quick sort using a single array(list) and doing it in place 
- * 
- *  Instrument it to allow the changing of the Insertion Sort Switch over
- * 
+ * @author Trevor Yokoyama, Ryan Daly
+ * @date   Feb. 2nd 2017
+ *
  */
+
 public abstract class Quick_Sort<Type extends Comparable<? super Type>> implements Sorter<Type>
 
 {
@@ -47,6 +52,9 @@ public abstract class Quick_Sort<Type extends Comparable<? super Type>> implemen
 	{
 		Type pivot=array.get(right);
 		int index=left-1;
+		//Swaps the necessary elements
+		//To the left for less than the pivot
+		//To the right for more than the pivot
 		for(int position=left;position<right;position++){
 			if(array.get(position).compareTo(pivot)<=0){
 				index++;
@@ -55,7 +63,13 @@ public abstract class Quick_Sort<Type extends Comparable<? super Type>> implemen
 		}
 		Sorter.swap(array, index+1, right);
 		return index+1;
+		
 	}
+
+	
+
+			
+	
 
 	/**
 	 * The actual Quick Sort on an Array routine.
@@ -77,14 +91,16 @@ public abstract class Quick_Sort<Type extends Comparable<? super Type>> implemen
 	private void quick_sort( ArrayList<Type> array, int start, int end )
 	{
 		if(end-start>switchOverLevel){
+			choose_pivot(array,start,end);
 		// 1) partition array
 			int pivot=partition(array,start,end);
 		// 2) sort left
 			quick_sort(array,start,pivot-1);
 		// 3) sort right           (again, don't resort the pivot)
 			quick_sort(array,pivot+1,end);
+		}else{
+		Sort_Utils.insertion_sort(array, start, end+1);
 		}
-		Sort_Utils.insertion_sort(array, start, end);
 
 	}
 

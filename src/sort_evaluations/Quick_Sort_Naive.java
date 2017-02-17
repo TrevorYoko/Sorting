@@ -6,51 +6,45 @@ import java.util.ArrayList;
 import javax.lang.model.element.QualifiedNameable;
 
 /**
- * @author H. James de St. Germain
+ * This code calls and gives information on Quick Sort with the Pivot being the median of three elements
+ * 
+ * Pseudo Code
+ * 1)Grab a pivot (The median of the first, middle and last elements of the list)
+ * 2)Cut Array in half, one half is elements less than pivot and the other is elements more than pivot
+ * 3)Sort the lists into smaller lists
+ * 4)Combine the lists
+ * 
+ * @author Trevor Yokoyama, Ryan Daly
+ * @date   Feb. 2nd 2017
  *
- *         This is a naive implementation of quicksort which uses copies of
- *         Arraylists instead of using a single array "in-place".
- * 
- *         This code should be much easier to "understand" than in-place manipulations
- * 
- *         WARNING: even though it extends quick sort, it DOES NOT use the super class
- *         implementation!
- *         
- *         Note: you must implement the quick_sort abstract class before this will work.
- * 
- * 
  */
 public class Quick_Sort_Naive<Type extends Comparable<? super Type>> extends Quick_Sort<Type>
 {
 
 	/**
-	 * start off with just using the first value as a pivot, but you should
-	 * (after everything is working) implement median of three
+	 * Chooses the Pivot as being the median of the first, middle and last elements of the list
 	 */
 	@Override
 	protected Type choose_pivot( ArrayList<Type> array, int start, int end )
 	{
-		return array.get(0);
-		// return median_of_three( array );
+		//return array.get(0);
+		return median_of_three( array );
 	}
 
 	/**
 	 * Median of Three (choose the middle element position)
 	 * 
-	 * FIXME: returns the value of the middle element of the array list
+	 * @return returns the value of the middle element of the array list
 	 */
 	private Type median_of_three( ArrayList<Type> array )
 	{
-		Type first=array.get(0);
-		Type middle=array.get((array.size()-1)/2);
-		Type last=array.get(array.size()-1);
-		if(first.compareTo(middle)>0){
+		if(array.get(0).compareTo(array.get((array.size()-1)/2))>0){
 			Sorter.swap(array, 0, (array.size()-1)/2);
 		}
-		if(first.compareTo(last)>0){
+		if(array.get(0).compareTo(array.get(array.size()-1))>0){
 			Sorter.swap(array, 0, array.size()-1);
 		}
-		if(middle.compareTo(last)>0){
+		if(array.get((array.size()-1)/2).compareTo(array.get(array.size()-1))>0){
 			Sorter.swap(array, array.size()-1, (array.size()-1)/2);
 		}
 		return array.get((array.size()-1)/2);
@@ -78,7 +72,7 @@ public class Quick_Sort_Naive<Type extends Comparable<? super Type>> extends Qui
 		 */
 		if (array.size() <= Quick_Sort.switchOverLevel)
 		{
-			Sort_Utils.insertion_sort(array, 0, array.size() - 1);
+			Sort_Utils.insertion_sort(array, 0, array.size());
 			return;
 		}
 
@@ -127,7 +121,7 @@ public class Quick_Sort_Naive<Type extends Comparable<? super Type>> extends Qui
 	}
 
 	/**
-	 * Name of Sort_Tester
+	 * Name of Sort_Tester (Quick Sort, Naive)
 	 */
 	public String name_of_sort()
 	{
